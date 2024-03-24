@@ -1,0 +1,269 @@
+openapi: "3.0.0"
+info:
+    version: 1.0.0
+    title: Swagger Petstore
+    license:
+        name: MIT
+servers:
+    - url: http://petstore.swagger.io/v1
+paths:
+    /pets:
+        get:
+            summary: List all pets
+            operationId: listPets
+            tags:
+                - pets
+            parameters:
+                - name: limit
+                  in: query
+                  description: How many items to return at one time (max 100)
+                  required: false
+                  schema:
+                    type: integer
+                    maximum: 100
+                    format: int32
+            responses:
+                '200':
+                    description: A paged array of pets
+                    headers:
+                        x-next:
+                            description: A link to the next page of responses
+                            schema:
+                                type: string
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Pets"
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+            x-codeSamples:
+                - lang: go
+                  label: listPets
+                  source: |-
+                    package main
+
+                    import(
+                    	"gosdk"
+                    	"context"
+                    	"log"
+                    )
+
+                    func main() {
+                        s := gosdk.New()
+
+
+                        var limit *int = gosdk.Int(21453)
+
+                        ctx := context.Background()
+                        res, err := s.ListPets(ctx, limit)
+                        if err != nil {
+                            log.Fatal(err)
+                        }
+                        if res.Pets != nil {
+                            // handle response
+                        }
+                    }
+                - lang: python
+                  label: listPets
+                  source: |-
+                    import pysdk
+
+                    s = pysdk.PySDK()
+
+
+                    res = s.list_pets(limit=21453)
+
+                    if res.pets is not None:
+                        # handle response
+                        pass
+                - lang: typescript
+                  label: listPets
+                  source: "import { TsSDK } from \"tssdk\";\n\nasync function run() {\n  const sdk = new TsSDK();\n\n  const limit = 21453;\n  \n  const result = await sdk.listPets(limit);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+        post:
+            summary: Create a pet
+            operationId: createPets
+            tags:
+                - pets
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/Pet'
+                required: true
+            responses:
+                '201':
+                    description: Null response
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+            x-codeSamples:
+                - lang: go
+                  label: createPets
+                  source: |-
+                    package main
+
+                    import(
+                    	"gosdk"
+                    	"context"
+                    	"gosdk/models/components"
+                    	"log"
+                    )
+
+                    func main() {
+                        s := gosdk.New()
+
+                        ctx := context.Background()
+                        res, err := s.CreatePets(ctx, components.Pet{
+                            ID: 596804,
+                            Name: "<value>",
+                        })
+                        if err != nil {
+                            log.Fatal(err)
+                        }
+                        if res != nil {
+                            // handle response
+                        }
+                    }
+                - lang: python
+                  label: createPets
+                  source: |-
+                    import pysdk
+                    from pysdk.models import components
+
+                    s = pysdk.PySDK()
+
+                    req = components.Pet(
+                        id=596804,
+                        name='<value>',
+                    )
+
+                    res = s.create_pets(req)
+
+                    if res is not None:
+                        # handle response
+                        pass
+                - lang: typescript
+                  label: createPets
+                  source: |-
+                    import { TsSDK } from "tssdk";
+
+                    async function run() {
+                      const sdk = new TsSDK();
+
+                      const result = await sdk.createPets({
+                        id: 596804,
+                        name: "<value>",
+                      });
+
+                      // Handle the result
+                      console.log(result)
+                    }
+
+                    run();
+    /pets/{petId}:
+        get:
+            summary: Info for a specific pet
+            operationId: showPetById
+            tags:
+                - pets
+            parameters:
+                - name: petId
+                  in: path
+                  required: true
+                  description: The id of the pet to retrieve
+                  schema:
+                    type: string
+            responses:
+                '200':
+                    description: Expected response to a valid request
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Pet"
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Error"
+            x-codeSamples:
+                - lang: go
+                  label: showPetById
+                  source: |-
+                    package main
+
+                    import(
+                    	"gosdk"
+                    	"context"
+                    	"log"
+                    )
+
+                    func main() {
+                        s := gosdk.New()
+
+
+                        var petID string = "<value>"
+
+                        ctx := context.Background()
+                        res, err := s.ShowPetByID(ctx, petID)
+                        if err != nil {
+                            log.Fatal(err)
+                        }
+                        if res.Pet != nil {
+                            // handle response
+                        }
+                    }
+                - lang: python
+                  label: showPetById
+                  source: |-
+                    import pysdk
+
+                    s = pysdk.PySDK()
+
+
+                    res = s.show_pet_by_id(pet_id='<value>')
+
+                    if res.pet is not None:
+                        # handle response
+                        pass
+                - lang: typescript
+                  label: showPetById
+                  source: "import { TsSDK } from \"tssdk\";\n\nasync function run() {\n  const sdk = new TsSDK();\n\n  const petId = \"<value>\";\n  \n  const result = await sdk.showPetById(petId);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+components:
+    schemas:
+        Pet:
+            type: object
+            required:
+                - id
+                - name
+            properties:
+                id:
+                    type: integer
+                    format: int64
+                name:
+                    type: string
+                tag:
+                    type: string
+        Pets:
+            type: array
+            maxItems: 100
+            items:
+                $ref: "#/components/schemas/Pet"
+        Error:
+            type: object
+            required:
+                - code
+                - message
+            properties:
+                code:
+                    type: integer
+                    format: int32
+                message:
+                    type: string
