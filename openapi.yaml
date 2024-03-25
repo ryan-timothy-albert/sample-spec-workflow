@@ -47,16 +47,16 @@ paths:
                     package main
 
                     import(
-                    	"gosdk"
+                    	"petsdk"
                     	"context"
                     	"log"
                     )
 
                     func main() {
-                        s := gosdk.New()
+                        s := petsdk.New()
 
 
-                        var limit *int = gosdk.Int(21453)
+                        var limit *int = petsdk.Int(21453)
 
                         ctx := context.Background()
                         res, err := s.ListPets(ctx, limit)
@@ -70,9 +70,9 @@ paths:
                 - lang: python
                   label: listPets
                   source: |-
-                    import pysdk
+                    import petsdk
 
-                    s = pysdk.PySDK()
+                    s = petsdk.PetSDK()
 
 
                     res = s.list_pets(limit=21453)
@@ -82,7 +82,7 @@ paths:
                         pass
                 - lang: typescript
                   label: listPets
-                  source: "import { TsSDK } from \"tssdk\";\n\nasync function run() {\n  const sdk = new TsSDK();\n\n  const limit = 21453;\n  \n  const result = await sdk.listPets(limit);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+                  source: "import { PetSDK } from \"petsdk\";\n\nasync function run() {\n  const sdk = new PetSDK();\n\n  const limit = 21453;\n  \n  const result = await sdk.listPets(limit);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
         post:
             summary: Create a pet
             operationId: createPets
@@ -110,14 +110,14 @@ paths:
                     package main
 
                     import(
-                    	"gosdk"
+                    	"petsdk"
                     	"context"
-                    	"gosdk/models/components"
+                    	"petsdk/models/components"
                     	"log"
                     )
 
                     func main() {
-                        s := gosdk.New()
+                        s := petsdk.New()
 
                         ctx := context.Background()
                         res, err := s.CreatePets(ctx, components.Pet{
@@ -134,10 +134,10 @@ paths:
                 - lang: python
                   label: createPets
                   source: |-
-                    import pysdk
-                    from pysdk.models import components
+                    import petsdk
+                    from petsdk.models import components
 
-                    s = pysdk.PySDK()
+                    s = petsdk.PetSDK()
 
                     req = components.Pet(
                         id=596804,
@@ -152,10 +152,10 @@ paths:
                 - lang: typescript
                   label: createPets
                   source: |-
-                    import { TsSDK } from "tssdk";
+                    import { PetSDK } from "petsdk";
 
                     async function run() {
-                      const sdk = new TsSDK();
+                      const sdk = new PetSDK();
 
                       const result = await sdk.createPets({
                         id: 596804,
@@ -200,13 +200,13 @@ paths:
                     package main
 
                     import(
-                    	"gosdk"
+                    	"petsdk"
                     	"context"
                     	"log"
                     )
 
                     func main() {
-                        s := gosdk.New()
+                        s := petsdk.New()
 
 
                         var petID string = "<value>"
@@ -223,9 +223,9 @@ paths:
                 - lang: python
                   label: showPetById
                   source: |-
-                    import pysdk
+                    import petsdk
 
-                    s = pysdk.PySDK()
+                    s = petsdk.PetSDK()
 
 
                     res = s.show_pet_by_id(pet_id='<value>')
@@ -235,7 +235,7 @@ paths:
                         pass
                 - lang: typescript
                   label: showPetById
-                  source: "import { TsSDK } from \"tssdk\";\n\nasync function run() {\n  const sdk = new TsSDK();\n\n  const petId = \"<value>\";\n  \n  const result = await sdk.showPetById(petId);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
+                  source: "import { PetSDK } from \"petsdk\";\n\nasync function run() {\n  const sdk = new PetSDK();\n\n  const petId = \"<value>\";\n  \n  const result = await sdk.showPetById(petId);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
 components:
     schemas:
         Pet:
