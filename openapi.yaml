@@ -5,17 +5,17 @@ info:
     license:
         name: MIT
 servers:
-    - url: http://petstdsfsore.swagger.io/v1
+    - url: http://petstore.swagger.io/v1
 paths:
     /pets:
         get:
-            summary: Lisdfsft all pets
+            summary: List all pets
             operationId: listPets
             tags:
                 - pets
             parameters:
                 - name: limit
-                  in: quedsfsry
+                  in: query
                   description: How many items to return at one time (max 100)
                   required: false
                   schema:
@@ -33,7 +33,7 @@ paths:
                     content:
                         application/json:
                             schema:
-                                $ref: "#/comdsfponents/schemas/Pets"
+                                $ref: "#/components/schemas/Pets"
                 default:
                     description: unexpected error
                     content:
@@ -157,7 +157,7 @@ paths:
                     async function run() {
                       const sdk = new PetSDK();
 
-                      const result = await sdk.createPets({
+                      const result = await sdk.createdPets({
                         id: 596804,
                         name: "<value>",
                       });
