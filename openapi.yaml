@@ -157,7 +157,7 @@ paths:
                     async function run() {
                       const sdk = new PetSDK();
 
-                      const result = await sdk.createdPets({
+                      const result = await sdk.createPets({
                         id: 596804,
                         name: "<value>",
                       });
