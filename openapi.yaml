@@ -67,6 +67,9 @@ paths:
                             // handle response
                         }
                     }
+                - lang: typescript
+                  label: listPets
+                  source: "import { PetSDK } from \"petsdk\";\n\nasync function run() {\n  const sdk = new PetSDK();\n\n  const limit = 21453;\n  \n  const result = await sdk.listPets(limit);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
                 - lang: python
                   label: listPets
                   source: |-
@@ -80,9 +83,6 @@ paths:
                     if res.pets is not None:
                         # handle response
                         pass
-                - lang: typescript
-                  label: listPets
-                  source: "import { PetSDK } from \"petsdk\";\n\nasync function run() {\n  const sdk = new PetSDK();\n\n  const limit = 21453;\n  \n  const result = await sdk.listPets(limit);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
         post:
             summary: Create a pet
             operationId: createPets
@@ -131,24 +131,6 @@ paths:
                             // handle response
                         }
                     }
-                - lang: python
-                  label: createPets
-                  source: |-
-                    import petsdk
-                    from petsdk.models import components
-
-                    s = petsdk.PetSDK()
-
-                    req = components.Pet(
-                        id=596804,
-                        name='<value>',
-                    )
-
-                    res = s.create_pets(req)
-
-                    if res is not None:
-                        # handle response
-                        pass
                 - lang: typescript
                   label: createPets
                   source: |-
@@ -167,6 +149,24 @@ paths:
                     }
 
                     run();
+                - lang: python
+                  label: createPets
+                  source: |-
+                    import petsdk
+                    from petsdk.models import components
+
+                    s = petsdk.PetSDK()
+
+                    req = components.Pet(
+                        id=596804,
+                        name='<value>',
+                    )
+
+                    res = s.create_pets(req)
+
+                    if res is not None:
+                        # handle response
+                        pass
     /pets/{petId}:
         get:
             summary: Info for a specific pet
@@ -220,6 +220,9 @@ paths:
                             // handle response
                         }
                     }
+                - lang: typescript
+                  label: showPetById
+                  source: "import { PetSDK } from \"petsdk\";\n\nasync function run() {\n  const sdk = new PetSDK();\n\n  const petId = \"<value>\";\n  \n  const result = await sdk.showPetById(petId);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
                 - lang: python
                   label: showPetById
                   source: |-
@@ -233,9 +236,6 @@ paths:
                     if res.pet is not None:
                         # handle response
                         pass
-                - lang: typescript
-                  label: showPetById
-                  source: "import { PetSDK } from \"petsdk\";\n\nasync function run() {\n  const sdk = new PetSDK();\n\n  const petId = \"<value>\";\n  \n  const result = await sdk.showPetById(petId);\n\n  // Handle the result\n  console.log(result)\n}\n\nrun();"
 components:
     schemas:
         Pet:
