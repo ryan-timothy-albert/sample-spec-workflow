@@ -8,6 +8,6 @@ sources:
             - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-typescript-sdk/main/codeSamples.yaml
             - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-python-sdk/main/codeSamples.yaml
               authHeader: authorization
-              authSecret: $openapi_doc_auth_token
+              authSecret: $OPENAPI_DOC_AUTH_TOKEN
         output: openapi.yaml
 targets: {}
