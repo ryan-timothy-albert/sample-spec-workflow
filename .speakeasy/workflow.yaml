@@ -6,7 +6,7 @@ sources:
         overlays:
             - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-go-sdk/main/codeSamples.yaml
             - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-typescript-sdk/main/codeSamples.yaml
-            - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-python-sdk/main/codeSamples.yaml
+            - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-python-sdk/main/py/codeSamples.yaml
               authHeader: authorization
               authSecret: $openapi_doc_auth_token
         output: openapi.yaml
