@@ -1,0 +1,19 @@
+speakeasyVersion: 1.257.1
+sources:
+    docs-source: {}
+targets: {}
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        docs-source:
+            inputs:
+                - location: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.yaml
+            overlays:
+                - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-go-sdk/main/codeSamples.yaml
+                - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-typescript-sdk/main/codeSamples.yaml
+                - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-python-sdk/main/py/codeSamples.yaml
+                  authHeader: authorization
+                  authSecret: $openapi_doc_auth_token
+            output: openapi.yaml
+    targets: {}
