@@ -1,6 +1,11 @@
-speakeasyVersion: 1.257.1
+speakeasyVersion: 1.260.6
 sources:
-    docs-source: {}
+    docs-source:
+        sourceNamespace: docs-source
+        sourceRevisionDigest: sha256:ee4bd6bb614abf2ec73fb4a00c09dca6d1abe6560e840a26a5b7c2c2525555ed
+        sourceBlobDigest: sha256:d29ffa9d27a3519183742f17f3361e9d75b493ef88ff236b00925b1e8cfef0c3
+        tags:
+            - latest
 targets: {}
 workflow:
     workflowVersion: 1.0.0
