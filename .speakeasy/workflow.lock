@@ -1,8 +1,8 @@
-speakeasyVersion: 1.260.6
+speakeasyVersion: 1.267.0
 sources:
     docs-source:
         sourceNamespace: docs-source
-        sourceRevisionDigest: sha256:ee4bd6bb614abf2ec73fb4a00c09dca6d1abe6560e840a26a5b7c2c2525555ed
+        sourceRevisionDigest: sha256:21a58edf4de6ed9b2eb0d339ba2063c80c3aad7c057be5fc8b916fac971d26ce
         sourceBlobDigest: sha256:d29ffa9d27a3519183742f17f3361e9d75b493ef88ff236b00925b1e8cfef0c3
         tags:
             - latest
