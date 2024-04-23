@@ -15,11 +15,15 @@ permissions:
     - cron: 0 0 * * *
 jobs:
   generate:
-    uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15
+    uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15.7.0
     with:
       force: ${{ github.event.inputs.force }}
       mode: direct
       speakeasy_version: latest
+      registry_tags: |-
+            latest
+            my-first-source: release_candidate_${{ github.sha }}
+            ${{ if eq(github.ref, 'refs/heads/main') }}prod${{ else }}${{ endif }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       openapi_doc_auth_token: ${{ secrets.OPENAPI_DOC_AUTH_TOKEN }}
