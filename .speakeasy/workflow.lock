@@ -2,7 +2,7 @@ speakeasyVersion: 1.271.0
 sources:
     docs-source:
         sourceNamespace: docs-source
-        sourceRevisionDigest: sha256:ef26aa615943f36d7a5d4c423e804c133cbacaffe1c7707fecbecfc3290b8ee4
+        sourceRevisionDigest: sha256:f0b37223ad5ddf77e2030721d62c93e7ea41a22dc970b9613830fc63ce0320f4
         sourceBlobDigest: sha256:d29ffa9d27a3519183742f17f3361e9d75b493ef88ff236b00925b1e8cfef0c3
         tags:
             - latest
