@@ -14,13 +14,30 @@ permissions:
   schedule:
     - cron: 0 0 * * *
 jobs:
+  compute_build_tag:
+    runs-on: ubuntu-latest
+    outputs:
+      build_tag: ${{ steps.compute_build_tag.outputs.build_tag }}
+    steps:
+      - name: Check build tag
+        id: build_tag
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "::set-output name=build_tag::prod"
+          else
+            echo "::set-output name=build_tag::"
+          fi
   generate:
+    needs: compute_build_tag
     uses: speakeasy-api/sdk-generation-action/.github/workflows/workflow-executor.yaml@v15.7.0
     with:
       force: ${{ github.event.inputs.force }}
       mode: direct
       speakeasy_version: latest
-      registry_tags: "latest,my-first-source:release_candidate_${{ github.sha }}"
+      registry_tags: |-
+            latest
+            my-first-source: release_candidate_${{ github.sha }}
+            ${{ needs.compute_build_tag.outputs.build_tag }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       openapi_doc_auth_token: ${{ secrets.OPENAPI_DOC_AUTH_TOKEN }}
