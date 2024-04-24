@@ -41,8 +41,8 @@ jobs:
       mode: direct
       speakeasy_version: latest
       registry_tags: |-
-            latest
-            my-first-source: release_candidate_${{ github.sha }}
+            ryan
+            docs-source: rc_${{ github.sha }}
             ${{ needs.compute_tags.outputs.build_tag }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
