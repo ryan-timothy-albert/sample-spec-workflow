@@ -42,6 +42,7 @@ jobs:
       speakeasy_version: latest
       registry_tags: |-
             ryan
+            my-first-source: release_candidate_${{ github.sha }}
             ${{ needs.compute_tags.outputs.build_tag }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
