@@ -42,8 +42,7 @@ jobs:
       speakeasy_version: latest
       registry_tags: |-
             ryan
-            # docs-source: rc_${{ github.sha }}
-            # ${{ needs.compute_tags.outputs.build_tag }}
+            ${{ needs.compute_tags.outputs.build_tag }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       openapi_doc_auth_token: ${{ secrets.OPENAPI_DOC_AUTH_TOKEN }}
