@@ -34,10 +34,10 @@ jobs:
       force: ${{ github.event.inputs.force }}
       mode: direct
       speakeasy_version: latest
-      registry_tags: |-
-            latest
-            my-first-source: release_candidate_${{ github.sha }}
-            ${{ needs.compute_tags.outputs.build_tag }}
+      # registry_tags: |-
+      #       latest
+      #       my-first-source: release_candidate_${{ github.sha }}
+      #       ${{ needs.compute_tags.outputs.build_tag }}
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       openapi_doc_auth_token: ${{ secrets.OPENAPI_DOC_AUTH_TOKEN }}
