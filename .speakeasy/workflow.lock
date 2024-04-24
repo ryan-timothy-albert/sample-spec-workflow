@@ -1,4 +1,4 @@
-speakeasyVersion: 1.271.0
+speakeasyVersion: 1.274.1
 sources:
     docs-source:
         sourceNamespace: docs-source
@@ -6,6 +6,14 @@ sources:
         sourceBlobDigest: sha256:d29ffa9d27a3519183742f17f3361e9d75b493ef88ff236b00925b1e8cfef0c3
         tags:
             - latest
+    my-tagging-demo:
+        sourceNamespace: my-tagging-demo
+        sourceRevisionDigest: sha256:0a33201123d2403c398ef98aa759b82da45f70ab7df11378421ab25cb4afdea6
+        sourceBlobDigest: sha256:865811496e1118f20b937ea2d438c09a8c0e924da9e03fe90cf976616b2f285d
+        tags:
+            - latest
+            - ryan
+            - prod
 targets: {}
 workflow:
     workflowVersion: 1.0.0
@@ -13,7 +21,7 @@ workflow:
     sources:
         docs-source:
             inputs:
-                - location: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.yaml
+                - location: input.yaml
             overlays:
                 - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-go-sdk/main/codeSamples.yaml
                 - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-typescript-sdk/main/codeSamples.yaml
@@ -21,4 +29,6 @@ workflow:
                   authHeader: authorization
                   authSecret: $openapi_doc_auth_token
             output: openapi.yaml
+            publish:
+                location: registry.speakeasyapi.dev/ryan-local/ryan-local/my-tagging-demo
     targets: {}
