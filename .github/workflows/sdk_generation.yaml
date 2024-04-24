@@ -16,9 +16,9 @@ permissions:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  # pull_request:
+  #   branches:
+  #     - main
 jobs:
   compute_tags:
     runs-on: ubuntu-latest
