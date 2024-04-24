@@ -8,11 +8,12 @@ sources:
             - latest
     my-tagging-demo:
         sourceNamespace: my-tagging-demo
-        sourceRevisionDigest: sha256:0a33201123d2403c398ef98aa759b82da45f70ab7df11378421ab25cb4afdea6
-        sourceBlobDigest: sha256:865811496e1118f20b937ea2d438c09a8c0e924da9e03fe90cf976616b2f285d
+        sourceRevisionDigest: sha256:4f975fb35ab69e73455d9c3ce06f11115b71b0ba1b8c60be4c38c6aeb18bf872
+        sourceBlobDigest: sha256:d29ffa9d27a3519183742f17f3361e9d75b493ef88ff236b00925b1e8cfef0c3
         tags:
             - latest
             - ryan
+            - release_candidate_2561b480c8a6170c8524a7d4300a51999e3b414f
             - prod
 targets: {}
 workflow:
