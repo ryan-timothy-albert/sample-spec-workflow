@@ -1,7 +1,7 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    docs-source:
+    docsSource:
         inputs:
             - location: input.yaml
         overlays:
@@ -10,7 +10,5 @@ sources:
             - location: https://raw.githubusercontent.com/ryan-timothy-albert/sample-python-sdk/main/py/codeSamples.yaml
               authHeader: authorization
               authSecret: $openapi_doc_auth_token
-        publish:
-            location: registry.speakeasyapi.dev/ryan-local/ryan-local/my-tagging-demo
         output: openapi.yaml
 targets: {}
