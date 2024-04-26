@@ -1,4 +1,4 @@
-speakeasyVersion: 1.274.1
+speakeasyVersion: 1.276.0
 sources:
     docs-source:
         sourceNamespace: docs-source
@@ -6,6 +6,14 @@ sources:
         sourceBlobDigest: sha256:d29ffa9d27a3519183742f17f3361e9d75b493ef88ff236b00925b1e8cfef0c3
         tags:
             - latest
+    docsSource:
+        sourceNamespace: docs-source
+        sourceRevisionDigest: sha256:dd7cef2d69c51dca48c5b9933bae006fcab79117b8fb013d73aa42d8e76e4707
+        sourceBlobDigest: sha256:c78a8cba661ab102a107a1924a987e7c29d5356d1c0d2a4db5645b0b34cbda2b
+        tags:
+            - latest
+            - ryan
+            - prod
     my-tagging-demo:
         sourceNamespace: my-tagging-demo
         sourceRevisionDigest: sha256:9ed13dc1e262b15c09ce70a69a38f91392626b3c88c8e66d77bff7e17d53226e
@@ -20,7 +28,7 @@ workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        docs-source:
+        docsSource:
             inputs:
                 - location: input.yaml
             overlays:
@@ -30,6 +38,6 @@ workflow:
                   authHeader: authorization
                   authSecret: $openapi_doc_auth_token
             output: openapi.yaml
-            publish:
-                location: registry.speakeasyapi.dev/ryan-local/ryan-local/my-tagging-demo
+            registry:
+                location: registry.speakeasyapi.dev/ryan-local/ryan-local/docs-source
     targets: {}

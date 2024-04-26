@@ -11,4 +11,6 @@ sources:
               authHeader: authorization
               authSecret: $openapi_doc_auth_token
         output: openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/ryan-local/ryan-local/docs-source
 targets: {}
