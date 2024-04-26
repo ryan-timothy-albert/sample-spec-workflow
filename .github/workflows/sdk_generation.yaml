@@ -13,12 +13,6 @@ permissions:
         default: false
   schedule:
     - cron: 0 0 * * *
-  push:
-    branches:
-      - main
-  # pull_request:
-  #   branches:
-  #     - main
 jobs:
   compute_tags:
     runs-on: ubuntu-latest
