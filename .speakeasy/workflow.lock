@@ -8,7 +8,7 @@ sources:
             - latest
     docsSource:
         sourceNamespace: docs-source
-        sourceRevisionDigest: sha256:dafd1b29d5be242f7470bb051109b3bee9c3bc686f638fa36ffbb032a2e10450
+        sourceRevisionDigest: sha256:1b22445ec3aa871e7b1fb3291ac0b5e00db0e711594e0a6b130bf9a0d8416eef
         sourceBlobDigest: sha256:c78a8cba661ab102a107a1924a987e7c29d5356d1c0d2a4db5645b0b34cbda2b
         tags:
             - latest
