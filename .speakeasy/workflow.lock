@@ -1,4 +1,4 @@
-speakeasyVersion: 1.279.0
+speakeasyVersion: 1.280.1
 sources:
     docs-source:
         sourceNamespace: docs-source
@@ -8,10 +8,11 @@ sources:
             - latest
     docsSource:
         sourceNamespace: docs-source
-        sourceRevisionDigest: sha256:fbf1414080da64d7171b690fb3db4e70ab4a74a117860a853b6b6ae9b94cfe12
+        sourceRevisionDigest: sha256:1be609997191330d2f1e863eb63f8e611f8554200d9ac68f843ccfc05e718993
         sourceBlobDigest: sha256:c78a8cba661ab102a107a1924a987e7c29d5356d1c0d2a4db5645b0b34cbda2b
         tags:
             - latest
+            - main
             - ryan
             - prod
     my-tagging-demo:
