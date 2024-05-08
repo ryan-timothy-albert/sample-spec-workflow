@@ -77,7 +77,6 @@ paths:
 
                     s = petsdk.PetSDK()
 
-
                     res = s.list_pets(limit=21453)
 
                     if res.pets is not None:
@@ -157,12 +156,10 @@ paths:
 
                     s = petsdk.PetSDK()
 
-                    req = components.Pet(
+                    res = s.create_pets(request=components.Pet(
                         id=596804,
                         name='<value>',
-                    )
-
-                    res = s.create_pets(req)
+                    ))
 
                     if res is not None:
                         # handle response
@@ -229,7 +226,6 @@ paths:
                     import petsdk
 
                     s = petsdk.PetSDK()
-
 
                     res = s.show_pet_by_id(pet_id='<value>')
 
