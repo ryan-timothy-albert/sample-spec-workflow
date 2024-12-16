@@ -36,6 +36,12 @@
       "name": "Blog",
       "icon": "newspaper",
       "url": "https://mintlify.com/blog"
+    },
+    {
+      "name": "API Reference",
+      "openapi": "https://spec.speakeasy.com/statics/statics/statics-oas-with-code-samples",
+      "url": "api-reference",
+      "icon": "square-terminal"
     }
   ],
   "footerSocials": {
