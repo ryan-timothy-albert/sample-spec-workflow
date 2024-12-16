@@ -4,6 +4,7 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
+  "openapi": "https://spec.speakeasy.com/statics/statics/statics-oas-with-code-samples",
   "favicon": "/favicon.svg",
   "colors": {
     "primary": "#0D9373",
