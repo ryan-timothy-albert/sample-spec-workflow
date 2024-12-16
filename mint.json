@@ -38,16 +38,6 @@
       "url": "https://mintlify.com/blog"
     }
   ],
-  "navigation": [
-    {
-      "group": "pets",
-      "pages": [
-        "api-reference/pets/list-all-pets",
-        "api-reference/pets/create-a-pet",
-        "api-reference/pets/info-for-a-specific-pet"
-      ]
-    }
-  ],
   "footerSocials": {
     "twitter": "https://twitter.com/mintlify",
     "github": "https://github.com/mintlify",
